@@ -24,9 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={font.variable}>
         <div className="wrapper">
-          <header>
+          <header className="header">
             <div className="header__container">
               <a href="/" className="header__logo">
                 <Image
