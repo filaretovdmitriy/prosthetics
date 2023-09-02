@@ -1,9 +1,16 @@
+import { Roboto } from "next/font/google";
 import Menu from "@/components/menu/menu";
+import Image from "next/image";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Roboto({
+  weight: ["400", "500", "700"],
+  subsets: ["cyrillic"],
+  variable: "--font-roboto",
+});
+
+export { font };
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,8 +24,34 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Menu />
+      <body>
+        <div className="wrapper">
+          <header>
+            <div className="header__container">
+              <a href="/" className="header__logo">
+                <Image
+                  src="/img/header/logo.svg"
+                  width={69}
+                  height={89}
+                  alt=""
+                />
+
+                <span>
+                  Архангельское
+                  <br />
+                  протезно-ортопедическое
+                  <br />
+                  предприятие
+                </span>
+              </a>
+              <Menu />
+              <div className="header__burger">
+                <span></span>
+              </div>
+            </div>
+          </header>
+        </div>
+
         {children}
       </body>
     </html>
