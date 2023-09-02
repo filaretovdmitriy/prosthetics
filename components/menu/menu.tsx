@@ -8,7 +8,9 @@ interface MenuItem {
 }
 
 const getMenu = async () => {
-  let resp = await fetch("http://webapi.a-test.ru/menu.php");
+  let resp = await fetch("http://webapi.a-test.ru/menu.php", {
+    next: { revalidate: 10 },
+  });
   if (resp.ok) {
     return resp.json();
   } else return [];
