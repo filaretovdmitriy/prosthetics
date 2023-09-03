@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Maincontainer from "@/components/maincontainer/maincontainer";
+import Sertificates from "@/components/sertificates/sertificates";
 
 export default function Home() {
   return (
@@ -225,72 +226,7 @@ export default function Home() {
 
       <div className="block gradientbg">
         <section className="sertificate">
-          <div className="sertificate__container">
-            <h4 className="sertificate__title">
-              НАШИ <span>НАГРАДЫ</span> И <span>СЕРТИФИКАТЫ</span>
-            </h4>
-            <div className="sertificate__body">
-              <div className="sertificate__arrow-left">
-                <img src="img/sertificate/arrow.svg" alt="" />
-              </div>
-              <div className="sertificate__swiper swiper">
-                <div className="swiper-wrapper">
-                  <a
-                    href="img/sertificate/1.png"
-                    data-fancybox="sertificate"
-                    className="swiper-slide"
-                  >
-                    <img src="img/sertificate/1.png" alt="" />
-                  </a>
-                  <a
-                    href="img/sertificate/2.png"
-                    data-fancybox="sertificate"
-                    className="swiper-slide"
-                  >
-                    <img src="img/sertificate/2.png" alt="" />
-                  </a>
-                  <a
-                    href="img/sertificate/3.png"
-                    data-fancybox="sertificate"
-                    className="swiper-slide"
-                  >
-                    <img src="img/sertificate/3.png" alt="" />
-                  </a>
-                  <a
-                    href="img/sertificate/4.png"
-                    data-fancybox="sertificate"
-                    className="swiper-slide"
-                  >
-                    <img src="img/sertificate/4.png" alt="" />
-                  </a>
-                  <a
-                    href="img/sertificate/5.png"
-                    data-fancybox="sertificate"
-                    className="swiper-slide"
-                  >
-                    <img src="img/sertificate/5.png" alt="" />
-                  </a>
-                  <a
-                    href="img/sertificate/3.png"
-                    data-fancybox="sertificate"
-                    className="swiper-slide"
-                  >
-                    <img src="img/sertificate/3.png" alt="" />
-                  </a>
-                  <a
-                    href="img/sertificate/4.png"
-                    data-fancybox="sertificate"
-                    className="swiper-slide"
-                  >
-                    <img src="img/sertificate/4.png" alt="" />
-                  </a>
-                </div>
-              </div>
-              <div className="sertificate__arrow-right">
-                <img src="img/sertificate/arrowRight.svg" alt="" />
-              </div>
-            </div>
-          </div>
+          <Sertificates />
         </section>
         <section className="clients">
           <div className="clients__container">
