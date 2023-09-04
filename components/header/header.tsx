@@ -5,7 +5,7 @@ import Menu from "../menu/menu";
 export default function Header(): JSX.Element {
   const [fixHeader, setFixHeader] = useState(false);
   const scrollFix: number = 200;
-  useEffect(() => {
+  /* useEffect(() => {
     const handleScroll = () => {
       setFixHeader(document.body.scrollTop > scrollFix);
     };
@@ -15,10 +15,10 @@ export default function Header(): JSX.Element {
       document.body.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+*/
   return (
     <>
-      <header className={`header ${fixHeader == true ? "show" : ""}`}>
+      <header className="header">
         <div className="header__container">
           <a href="/" className="header__logo">
             <Image src="/img/header/logo.svg" width={69} height={89} alt="" />
