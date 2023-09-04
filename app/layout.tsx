@@ -4,6 +4,7 @@ import Image from "next/image";
 import "./globals.css";
 import type { Metadata } from "next";
 import Maincontainer from "@/components/maincontainer/maincontainer";
+import Header from "@/components/header/header";
 
 const font = Roboto({
   weight: ["400", "500", "700"],
@@ -27,30 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.variable}>
         <div className="wrapper">
-          <header className="header">
-            <div className="header__container">
-              <a href="/" className="header__logo">
-                <Image
-                  src="/img/header/logo.svg"
-                  width={69}
-                  height={89}
-                  alt=""
-                />
-
-                <span>
-                  Архангельское
-                  <br />
-                  протезно-ортопедическое
-                  <br />
-                  предприятие
-                </span>
-              </a>
-              <Menu />
-              <div className="header__burger">
-                <span></span>
-              </div>
-            </div>
-          </header>
+          <Header />
           <main className="main-wrapper">{children}</main>
         </div>
       </body>
