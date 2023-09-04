@@ -29,7 +29,7 @@ export default function Sertificates(): JSX.Element {
           <Arrow
             left
             onClick={(e: any) => {
-              e.stopPropagation || instanceRef.current?.prev();
+              e.stopPropagation() || instanceRef.current?.prev();
             }}
             disabled={currentSlide === 0}
           />
@@ -107,30 +107,36 @@ export default function Sertificates(): JSX.Element {
               alt=""
             />
           </div>
-        </div>
 
-        {/* {loaded && instanceRef.current && (
-          <div className="dots">
-            {[
-              ...Array(instanceRef.current.track.details.slides.length).keys(),
-            ].map((idx) => {
-              return (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    instanceRef.current?.moveToIdx(idx);
-                  }}
-                  className={"dot" + (currentSlide === idx ? " active" : "")}
-                ></button>
-              );
-            })}
+          <div
+            data-fancybox="sertificate"
+            className="keen-slider__slide number-slide6"
+          >
+            <Image
+              src="/img/sertificate/3.png"
+              width={169}
+              height={234}
+              alt=""
+            />
           </div>
-        )} */}
+
+          <div
+            data-fancybox="sertificate"
+            className="keen-slider__slide number-slide6"
+          >
+            <Image
+              src="/img/sertificate/3.png"
+              width={169}
+              height={234}
+              alt=""
+            />
+          </div>
+        </div>
 
         {loaded && instanceRef.current && (
           <Arrow
             onClick={(e: any) => {
-              e.stopPropagation || instanceRef.current?.next();
+              e.stopPropagation() || instanceRef.current?.next();
             }}
             disabled={
               currentSlide ===
