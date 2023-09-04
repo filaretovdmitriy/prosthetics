@@ -27,7 +27,15 @@ export default function Sertificates(): JSX.Element {
         <h4 className="sertificate__title">
           НАШИ <span>НАГРАДЫ</span> И <span>СЕРТИФИКАТЫ</span>
         </h4>
-        {loaded && instanceRef.current && <Arrow />}
+        {loaded && instanceRef.current && (
+          <Arrow
+            left
+            onClick={(e: any) =>
+              e.stopPropagation || instanceRef.current?.prev()
+            }
+            disabled={currentSlide === 0}
+          />
+        )}
 
         <div className="keen-slider" ref={sliderRef}>
           <div
@@ -102,20 +110,47 @@ export default function Sertificates(): JSX.Element {
             />
           </div>
         </div>
-
-        <div className="sertificate__arrow-right">
-          <img src="img/sertificate/arrowRight.svg" alt="" />
-        </div>
+        {loaded && instanceRef.current && (
+          <Arrow
+            onClick={(e: any) =>
+              e.stopPropagation || instanceRef.current?.next()
+            }
+            disabled={
+              currentSlide ===
+              instanceRef.current.track.details.slides.length - 1
+            }
+          />
+        )}
       </div>
     </>
   );
 }
 
-function Arrow() {
+function Arrow(props: {
+  left?: boolean;
+  disabled: boolean;
+  onClick: (e: any) => void;
+}) {
   return (
     <>
-      <div className="sertificate__arrow-left">
-        <img src="img/sertificate/arrow.svg" alt="" />
+      <div
+        onClick={props.onClick}
+        className={`arrow ${
+          props.left
+            ? "arrow-left sertificate__arrow-left"
+            : "arrow-right sertificate__arrow-right"
+        }`}
+      >
+        <Image
+          src={`${
+            props.left
+              ? "/img/sertificate/arrow.svg"
+              : "/img/sertificate/arrowRight.svg"
+          }`}
+          width={100}
+          height={50}
+          alt=""
+        />
       </div>
     </>
   );
