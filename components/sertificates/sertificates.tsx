@@ -14,8 +14,6 @@ export default function Sertificates(): JSX.Element {
     created() {
       setLoaded(true);
     },
-    loop: true,
-    mode: "free",
     slides: {
       perView: 5,
       spacing: 15,
@@ -30,9 +28,9 @@ export default function Sertificates(): JSX.Element {
         {loaded && instanceRef.current && (
           <Arrow
             left
-            onClick={(e: any) =>
-              e.stopPropagation || instanceRef.current?.prev()
-            }
+            onClick={(e: any) => {
+              e.stopPropagation || instanceRef.current?.prev();
+            }}
             disabled={currentSlide === 0}
           />
         )}
@@ -76,10 +74,10 @@ export default function Sertificates(): JSX.Element {
 
           <div
             data-fancybox="sertificate"
-            className="keen-slider__slide number-slide3"
+            className="keen-slider__slide number-slide4"
           >
             <Image
-              src="/img/sertificate/3.png"
+              src="/img/sertificate/4.png"
               width={169}
               height={234}
               alt=""
@@ -88,10 +86,10 @@ export default function Sertificates(): JSX.Element {
 
           <div
             data-fancybox="sertificate"
-            className="keen-slider__slide number-slide3"
+            className="keen-slider__slide number-slide5"
           >
             <Image
-              src="/img/sertificate/3.png"
+              src="/img/sertificate/5.png"
               width={169}
               height={234}
               alt=""
@@ -100,7 +98,7 @@ export default function Sertificates(): JSX.Element {
 
           <div
             data-fancybox="sertificate"
-            className="keen-slider__slide number-slide3"
+            className="keen-slider__slide number-slide6"
           >
             <Image
               src="/img/sertificate/3.png"
@@ -110,11 +108,30 @@ export default function Sertificates(): JSX.Element {
             />
           </div>
         </div>
+
+        {/* {loaded && instanceRef.current && (
+          <div className="dots">
+            {[
+              ...Array(instanceRef.current.track.details.slides.length).keys(),
+            ].map((idx) => {
+              return (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    instanceRef.current?.moveToIdx(idx);
+                  }}
+                  className={"dot" + (currentSlide === idx ? " active" : "")}
+                ></button>
+              );
+            })}
+          </div>
+        )} */}
+
         {loaded && instanceRef.current && (
           <Arrow
-            onClick={(e: any) =>
-              e.stopPropagation || instanceRef.current?.next()
-            }
+            onClick={(e: any) => {
+              e.stopPropagation || instanceRef.current?.next();
+            }}
             disabled={
               currentSlide ===
               instanceRef.current.track.details.slides.length - 1
@@ -131,6 +148,7 @@ function Arrow(props: {
   disabled: boolean;
   onClick: (e: any) => void;
 }) {
+  const disabeld = props.disabled ? " arrow--disabled" : "";
   return (
     <>
       <div
