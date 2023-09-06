@@ -8,16 +8,14 @@ interface PageData {
   header: string;
 }
 const getPage = async (): Promise<PageData> => {
-  let page = {};
-  fetch("http://webapi.a-test.ru/pages.php", {
+  const res = await fetch("http://webapi.a-test.ru/pages.php", {
     method: "POST",
     headers: { "Content-Type": "application/json;charset=utf-8" },
     body: JSON.stringify({ page: "handsprosthetics" }),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      page = data;
-    });
+  });
+  const data = await res.json();
+
+  return data;
 };
 export default async function Handsprosthetics() {
   let page = await getPage();

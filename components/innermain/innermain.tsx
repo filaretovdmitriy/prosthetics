@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Innermain(props) {
+export default function Innermain(props: any) {
   return (
     <>
       <section className="main">
@@ -14,7 +14,7 @@ export default function Innermain(props) {
         </div>
         <div className="main__container">
           <div className="main__content">
-            <h1 className="main__title">{props.link}</h1>
+            <h1 className="main__title">{props.header}</h1>
             <div className="main__subtitle subtitle">
               Мы научим пользоваться протезом и окажем{" "}
               <span>профессиональную помощь</span>
