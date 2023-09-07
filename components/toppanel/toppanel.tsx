@@ -1,10 +1,10 @@
 import { TopPanel } from "@/interfaces/page";
-export default function Toppanel(props: TopPanel) {
+export default function Toppanel({ title, content }: TopPanel) {
   return (
     <>
       <div className="main__body">
-        <h3>{props.title}</h3>
-        <p>{props.content}</p>
+        <h3>{title}</h3>
+        <p>{content}</p>
       </div>
     </>
   );
