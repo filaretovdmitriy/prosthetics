@@ -14,7 +14,6 @@ const getPage = async (): Promise<PageData> => {
     body: JSON.stringify({ page: "handsprosthetics" }),
   });
   const data = await res.json();
-
   return data;
 };
 export default async function Handsprosthetics() {
