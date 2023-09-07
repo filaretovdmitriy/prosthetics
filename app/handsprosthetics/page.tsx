@@ -1,19 +1,15 @@
 import Innerheader from "@/components/innerheader/innerheader";
 import Innermain from "@/components/innermain/innermain";
-interface PageData {
-  id: number;
-  pagename: string;
-  name: string;
-  link: string;
-  header: string;
-}
+import { PageData } from "@/interfaces/page";
+
 const getPage = async (): Promise<PageData> => {
-  const res = await fetch("http://webapi.a-test.ru/pages.php", {
+  const data: PageData = await fetch("http://webapi.a-test.ru/page.php", {
+    next: { revalidate: 10 },
     method: "POST",
     headers: { "Content-Type": "application/json;charset=utf-8" },
     body: JSON.stringify({ page: "handsprosthetics" }),
-  });
-  const data = await res.json();
+  }).then((res) => res.json());
+
   return data;
 };
 export default async function Handsprosthetics() {

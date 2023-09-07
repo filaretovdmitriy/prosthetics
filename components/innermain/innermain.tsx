@@ -1,6 +1,6 @@
 import Image from "next/image";
-
-export default function Innermain(props: any) {
+import { PageData } from "@/interfaces/page";
+export default function Innermain(props: PageData) {
   return (
     <>
       <section className="main">
@@ -14,11 +14,14 @@ export default function Innermain(props: any) {
         </div>
         <div className="main__container">
           <div className="main__content">
-            <h1 className="main__title">{props.header}</h1>
-            <div className="main__subtitle subtitle">
-              Мы научим пользоваться протезом и окажем{" "}
-              <span>профессиональную помощь</span>
-            </div>
+            <h1
+              className="main__title"
+              dangerouslySetInnerHTML={{ __html: props.header }}
+            ></h1>
+            <div
+              className="main__subtitle subtitle"
+              dangerouslySetInnerHTML={{ __html: props.subtitle }}
+            ></div>
             <a data-topopup="#popup" href="#" className="main__button button">
               оставить заявку
             </a>
