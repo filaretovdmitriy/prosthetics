@@ -11,8 +11,9 @@ const getPage = async (): Promise<PageData> => {
   })
     .then((res) => res.json())
     .then((data) => {
-      page = data;
+      return data;
     });
+  return data;
 };
 export default async function Handsprosthetics() {
   let page = await getPage();
