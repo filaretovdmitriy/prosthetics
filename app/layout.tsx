@@ -5,6 +5,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Maincontainer from "@/components/maincontainer/maincontainer";
 import Header from "@/components/header/header";
+import Gallery from "@/components/gallery/gallery";
+import Feedback from "@/components/feedback/feedback";
+import Footer from "@/components/footer/footer";
 
 const font = Roboto({
   weight: ["400", "500", "700"],
@@ -30,6 +33,9 @@ export default function RootLayout({
         <div className="wrapper">
           <Header />
           <main className="main-wrapper">{children}</main>
+          <Gallery />
+          <Feedback />
+          <Footer />
           <footer className="footer">
             <div className="footer__container">
               <div className="footer__left">

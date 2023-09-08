@@ -1,8 +1,10 @@
 import Innerheader from "@/components/innerheader/innerheader";
 import Innermain from "@/components/innermain/innermain";
-let page = {};
-const getPage = async () => {
-  fetch("http://webapi.a-test.ru/pages", {
+import { PageData } from "@/interfaces/page";
+
+const getPage = async (): Promise<PageData> => {
+  const data: PageData = await fetch("http://webapi.a-test.ru/page.php", {
+    next: { revalidate: 10 },
     method: "POST",
     headers: { "Content-Type": "application/json;charset=utf-8" },
     body: JSON.stringify({ page: "handsprosthetics" }),
@@ -10,10 +12,11 @@ const getPage = async () => {
     .then((res) => res.json())
     .then((data) => {
       page = data;
-      console.log(data);
     });
 };
-export default function Handsprosthetics() {
+export default async function Handsprosthetics() {
+  let page = await getPage();
+
   return (
     <>
       <Innermain {...page} />
