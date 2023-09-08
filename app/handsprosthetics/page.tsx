@@ -10,6 +10,7 @@ const getPage = async () => {
     .then((res) => res.json())
     .then((data) => {
       page = data;
+      console.log(data);
     });
 };
 export default function Handsprosthetics() {
