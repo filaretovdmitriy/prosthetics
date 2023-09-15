@@ -1,21 +1,6 @@
-"use client";
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import Menu from "../menu/menu";
 export default function Header(): JSX.Element {
-  const [fixHeader, setFixHeader] = useState(false);
-  const scrollFix: number = 200;
-  /* useEffect(() => {
-    const handleScroll = () => {
-      setFixHeader(document.body.scrollTop > scrollFix);
-    };
-
-    document.body.addEventListener("scroll", handleScroll);
-    return () => {
-      document.body.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-*/
   return (
     <>
       <header className="header">
