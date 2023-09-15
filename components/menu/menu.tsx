@@ -24,7 +24,6 @@ const getMenu = async (): Promise<Array<MenuItem>> => {
 };
 
 export default async function Menu() {
-  const [loaded, setLoaded] = useState(false);
   let menuItems: Array<MenuItem> = await getMenu();
   return (
     <nav className="menu">
