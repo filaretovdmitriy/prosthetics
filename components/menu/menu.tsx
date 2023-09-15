@@ -1,5 +1,5 @@
-import { ReactNode, useEffect, useState } from "react";
 import { json } from "stream/consumers";
+import Callback from "../callback/callback";
 
 interface MenuItem {
   id: number;
@@ -36,9 +36,7 @@ export default async function Menu() {
           </li>
         ))}
         <li className="menu__item">
-          <a data-topopup="#popup" className="menu__button" href="#">
-            обратный звонок
-          </a>
+          <Callback />
         </li>
       </ul>
     </nav>
