@@ -2040,8 +2040,7 @@ body.popuplock {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  opacity: 0;
-  visibility: hidden;
+
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   pointer-events: none;

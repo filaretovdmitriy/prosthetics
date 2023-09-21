@@ -6,7 +6,7 @@ export default function Callback(props: any): JSX.Element {
 
   const showForm = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault;
-    setIsPopupOpen(true);
+    setIsPopupOpen(!isPopupOpen);
     return true;
   };
 
