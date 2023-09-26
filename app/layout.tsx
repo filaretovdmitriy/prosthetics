@@ -32,14 +32,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [showPopup, setShowPopup] = useState(0);
   return (
     <html lang="en">
       <body className={font.variable}>
         <div className="wrapper">
-          <CallbackContext.Provider value={showPopup}>
-            <Header />
-          </CallbackContext.Provider>
+          <Header />
+          <Menu />
 
           <main className="main-wrapper">{children}</main>
           <Gallery />
@@ -80,9 +78,8 @@ export default function RootLayout({
               </div>
             </div>
           </footer>
-          <CallbackContext.Provider value={showPopup}>
-            <Popup />
-          </CallbackContext.Provider>
+
+          <Popup />
         </div>
       </body>
     </html>
