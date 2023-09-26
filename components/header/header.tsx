@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Menu from "../menu/menu";
+
 export default function Header(): JSX.Element {
   return (
     <>
