@@ -2,10 +2,14 @@
 import { useGlobalContext } from "@/context/store";
 export default function Popup() {
   const { isPopupOpen, setIsPopupOpen } = useGlobalContext();
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault;
+    setIsPopupOpen(false);
+  };
   return (
     isPopupOpen == true && (
       <div className="popup" id="popup">
-        <p className="popup__close"></p>
+        <p className="popup__close" onClick={handleClick}></p>
         <form className="popup__content">
           <div className="popup__title">
             БЕСПЛАТНАЯ <br />
