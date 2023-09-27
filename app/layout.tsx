@@ -33,6 +33,7 @@ export default function RootLayout({
       <body className={font.variable}>
         <div className="wrapper">
           <GlobalContextProvider>
+            <Popup />
             <Header />
 
             <main className="main-wrapper">{children}</main>
@@ -74,8 +75,6 @@ export default function RootLayout({
                 </div>
               </div>
             </footer>
-
-            <Popup />
           </GlobalContextProvider>
         </div>
       </body>
