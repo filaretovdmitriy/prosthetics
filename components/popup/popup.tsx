@@ -2,6 +2,7 @@
 import { useGlobalContext } from "@/context/store";
 export default function Popup() {
   const { isPopupOpen, setIsPopupOpen } = useGlobalContext();
+  const b: number = 12;
   return (
     isPopupOpen == true && (
       <div className="popup" id="popup">
